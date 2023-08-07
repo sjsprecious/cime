@@ -244,6 +244,14 @@ CIME.SystemTests.restart\_tests module
    :undoc-members:
    :show-inheritance:
 
+CIME.SystemTests.reuseinitfiles module
+--------------------------------------
+
+.. automodule:: CIME.SystemTests.reuseinitfiles
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 CIME.SystemTests.seq module
 ---------------------------
 
@@ -268,6 +276,14 @@ CIME.SystemTests.system\_tests\_common module
    :undoc-members:
    :show-inheritance:
 
+CIME.SystemTests.system\_tests\_compare\_n module
+-------------------------------------------------
+
+.. automodule:: CIME.SystemTests.system_tests_compare_n
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 CIME.SystemTests.system\_tests\_compare\_two module
 ---------------------------------------------------
 
@@ -283,7 +299,6 @@ CIME.SystemTests.tsc module
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Module contents
 ---------------

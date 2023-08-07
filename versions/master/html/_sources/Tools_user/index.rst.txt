@@ -11,8 +11,6 @@ and **case.setup**.
 .. toctree::
    :maxdepth: 1
 
-
-
    advanced-py-prof
    archive_metadata
    bld_diff
@@ -20,11 +18,8 @@ and **case.setup**.
    case.build
    case.cmpgen_namelists
    case.qstatus
-   case.run
    case.setup
-   case.st_archive
    case.submit
-   case.test
    case_diff
    check_case
    check_input_data
@@ -48,7 +43,6 @@ and **case.setup**.
    get_case_env
    get_standard_makefile_args
    jenkins_generic_job
-   jenkins_script
    list_e3sm_tests
    mkDepends
    mkSrcfiles
@@ -59,7 +53,6 @@ and **case.setup**.
    preview_run
    query_config
    query_testlists
-   rc.template
    save_provenance
    simple-py-prof
    simple_compare

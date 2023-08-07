@@ -10,8 +10,12 @@ Subpackages
    CIME.BuildTools
    CIME.Servers
    CIME.SystemTests
+   CIME.Tools
    CIME.XML
+   CIME.build_scripts
    CIME.case
+   CIME.data
+   CIME.scripts
    CIME.tests
 
 Submodules
@@ -81,6 +85,14 @@ CIME.compare\_test\_results module
    :undoc-members:
    :show-inheritance:
 
+CIME.config module
+------------------
+
+.. automodule:: CIME.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 CIME.cs\_status module
 ----------------------
 
@@ -113,6 +125,14 @@ CIME.expected\_fails module
    :undoc-members:
    :show-inheritance:
 
+CIME.get\_tests module
+----------------------
+
+.. automodule:: CIME.get_tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 CIME.get\_timing module
 -----------------------
 
@@ -125,6 +145,14 @@ CIME.hist\_utils module
 -----------------------
 
 .. automodule:: CIME.hist_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+CIME.jenkins\_generic\_job module
+---------------------------------
+
+.. automodule:: CIME.jenkins_generic_job
    :members:
    :undoc-members:
    :show-inheritance:
@@ -216,7 +244,6 @@ CIME.wait\_for\_tests module
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Module contents
 ---------------
