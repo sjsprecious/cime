@@ -11,11 +11,11 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/pop_ver.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -96,8 +96,12 @@
 <span class="c1"># pylint: disable=unused-argument</span>
 
 
-<div class="viewcode-block" id="TestXMLEnvBatch"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch">[docs]</a><span class="k">class</span> <span class="nc">TestXMLEnvBatch</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-<div class="viewcode-block" id="TestXMLEnvBatch.test_get_submit_args_job_queue"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_get_submit_args_job_queue">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_submit_args_job_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TestXMLEnvBatch">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch">[docs]</a>
+<span class="k">class</span> <span class="nc">TestXMLEnvBatch</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="TestXMLEnvBatch.test_get_submit_args_job_queue">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_get_submit_args_job_queue">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_get_submit_args_job_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span> <span class="k">as</span> <span class="n">tfile</span><span class="p">:</span>
             <span class="n">tfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
 <span class="w">                </span><span class="sa">b</span><span class="sd">&quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot;?&gt;</span>
@@ -153,7 +157,10 @@
             <span class="n">expected_args</span> <span class="o">=</span> <span class="s2">&quot;  -w default -w long&quot;</span>
             <span class="k">assert</span> <span class="n">submit_args</span> <span class="o">==</span> <span class="n">expected_args</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_get_submit_args"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_get_submit_args">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;TEST&quot;</span><span class="p">:</span> <span class="s2">&quot;GOOD&quot;</span><span class="p">})</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_get_submit_args">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_get_submit_args">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;TEST&quot;</span><span class="p">:</span> <span class="s2">&quot;GOOD&quot;</span><span class="p">})</span>
     <span class="k">def</span> <span class="nf">test_get_submit_args</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span> <span class="k">as</span> <span class="n">tfile</span><span class="p">:</span>
             <span class="n">tfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
@@ -245,7 +252,10 @@
 
             <span class="k">assert</span> <span class="n">submit_args</span> <span class="o">==</span> <span class="n">expected_args</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_get_queue_specs"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_get_queue_specs">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_get_queue_specs">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_get_queue_specs">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">test_get_queue_specs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">get</span><span class="p">):</span>
         <span class="n">node</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
 
@@ -285,7 +295,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">jobmax</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">strict</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_honor_walltimemax"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_honor_walltimemax">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_honor_walltimemax">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_honor_walltimemax">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
     <span class="c1"># nodemin, nodemax, jobname, walltimemin, walltimemax, jobmin, jobmax, strict</span>
     <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
         <span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get_queue_specs&quot;</span><span class="p">,</span>
@@ -341,7 +354,10 @@
             <span class="s2">&quot;JOB_WALLCLOCK_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;20:00:00&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="s2">&quot;case.run&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_honor_walltimemin"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_honor_walltimemin">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_honor_walltimemin">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_honor_walltimemin">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
     <span class="c1"># nodemin, nodemax, jobname, walltimemin, walltimemax, jobmin, jobmax, strict</span>
     <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
         <span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get_queue_specs&quot;</span><span class="p">,</span>
@@ -397,7 +413,10 @@
             <span class="s2">&quot;JOB_WALLCLOCK_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;05:00:00&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="s2">&quot;case.run&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_user_walltime"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_user_walltime">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_user_walltime">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_user_walltime">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
     <span class="c1"># nodemin, nodemax, jobname, walltimemax, jobmin, jobmax, strict</span>
     <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
         <span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get_queue_specs&quot;</span><span class="p">,</span>
@@ -453,7 +472,10 @@
             <span class="s2">&quot;JOB_WALLCLOCK_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="s2">&quot;case.run&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_walltimemax_none"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_walltimemax_none">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_walltimemax_none">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_walltimemax_none">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
     <span class="c1"># nodemin, nodemax, jobname, walltimemax, jobmin, jobmax, strict</span>
     <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
         <span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get_queue_specs&quot;</span><span class="p">,</span>
@@ -509,7 +531,10 @@
             <span class="s2">&quot;JOB_WALLCLOCK_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;08:00:00&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="s2">&quot;case.run&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_walltimemin_none"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_walltimemin_none">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_walltimemin_none">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_walltimemin_none">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
     <span class="c1"># nodemin, nodemax, jobname, walltimemax, jobmin, jobmax, strict</span>
     <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
         <span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get_queue_specs&quot;</span><span class="p">,</span>
@@ -565,7 +590,10 @@
             <span class="s2">&quot;JOB_WALLCLOCK_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;08:00:00&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="s2">&quot;case.run&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_walltimedef"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_walltimedef">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults_walltimedef">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults_walltimedef">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
     <span class="c1"># nodemin, nodemax, jobname, walltimemax, jobmin, jobmax, strict</span>
     <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
         <span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get_queue_specs&quot;</span><span class="p">,</span>
@@ -621,7 +649,10 @@
             <span class="s2">&quot;JOB_WALLCLOCK_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;10:00:00&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="s2">&quot;case.run&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults"><a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults">[docs]</a>    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TestXMLEnvBatch.test_set_job_defaults">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_xml_env_batch.TestXMLEnvBatch.test_set_job_defaults">[docs]</a>
+    <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;CIME.XML.env_batch.EnvBatch.text&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
     <span class="c1"># nodemin, nodemax, jobname, walltimemax, jobmin, jobmax, strict</span>
     <span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span>
         <span class="s2">&quot;CIME.XML.env_batch.EnvBatch.get_queue_specs&quot;</span><span class="p">,</span>
@@ -675,7 +706,9 @@
         <span class="p">)</span>
         <span class="n">env_workflow</span><span class="o">.</span><span class="n">set_value</span><span class="o">.</span><span class="n">assert_any_call</span><span class="p">(</span>
             <span class="s2">&quot;JOB_WALLCLOCK_TIME&quot;</span><span class="p">,</span> <span class="s2">&quot;12:00:00&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="s2">&quot;case.run&quot;</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
+
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>

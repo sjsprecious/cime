@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/pop_ver.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -111,7 +111,7 @@
            <div itemprop="articleBody">
              
   <section id="testing">
-<span id="id1"></span><h1><span class="section-number">8. </span>Testing<a class="headerlink" href="#testing" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1><span class="section-number">8. </span>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h1>
 <p><a class="reference external" href="../Tools_user/create_test.html">create_test</a>
 is the tool we use to test both CIME and CIME-driven models.
 It can be used as an easy way to run a single basic test or an entire suite of tests.
@@ -157,7 +157,7 @@ you can run <a class="reference internal" href="#id5">query_testlists</a>.</p>
 </pre></div>
 </div>
 <section id="testname-syntax">
-<h2><span class="section-number">8.1. </span>Testname syntax<a class="headerlink" href="#testname-syntax" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.1. </span>Testname syntax<a class="headerlink" href="#testname-syntax" title="Link to this heading"></a></h2>
 <p id="test-naming">Tests must be named with the following forms, [ ]=optional:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TESTTYPE</span><span class="p">[</span><span class="n">_MODIFIERS</span><span class="p">]</span><span class="o">.</span><span class="n">GRID</span><span class="o">.</span><span class="n">COMPSET</span><span class="p">[</span><span class="o">.</span><span class="n">MACHINE_COMPILER</span><span class="p">][</span><span class="o">.</span><span class="n">GROUP</span><span class="o">-</span><span class="n">TESTMODS</span><span class="p">]</span>
 </pre></div>
@@ -492,7 +492,7 @@ Examples include</p>
 current status of all your tests.</p>
 </section>
 <section id="query-testlists">
-<h2><span class="section-number">8.2. </span>Query_testlists<a class="headerlink" href="#query-testlists" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.2. </span>Query_testlists<a class="headerlink" href="#query-testlists" title="Link to this heading"></a></h2>
 <p id="id5"><strong>$CIMEROOT/scripts/query_testlists</strong> gathers descriptions of the tests and testlists available
 for CESM, the components, and projects.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">--xml-{compiler,machine,category,testlist}</span></code> arguments can be used
@@ -506,7 +506,7 @@ The available categories, with the tests they encompass, can be listed by:</p>
 such as queue, walltime, etc..</p>
 </section>
 <section id="using-create-test-e3sm">
-<h2><span class="section-number">8.3. </span>Using <strong>create_test</strong> (E3SM)<a class="headerlink" href="#using-create-test-e3sm" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.3. </span>Using <strong>create_test</strong> (E3SM)<a class="headerlink" href="#using-create-test-e3sm" title="Link to this heading"></a></h2>
 <p id="id6">Usage will differ slightly depending on if you’re using E3SM or CESM.</p>
 <p>Using examples to illustrate common use cases</p>
 <p>To run a test:</p>
@@ -586,7 +586,7 @@ such as queue, walltime, etc..</p>
 of the various test phases.</p>
 </section>
 <section id="managing-baselines">
-<h2><span class="section-number">8.4. </span>Managing baselines<a class="headerlink" href="#managing-baselines" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.4. </span>Managing baselines<a class="headerlink" href="#managing-baselines" title="Link to this heading"></a></h2>
 <p id="id8">A big part of testing is managing your baselines (sometimes called gold results). We have provided
 tools to help the user do this without having to repeat full runs of test cases with <a class="reference external" href="../Tools_user/create_test.html">create_test</a> .</p>
 <p>bless_test_results: Takes a batch of cases of tests that have already been run and copy their
@@ -605,7 +605,7 @@ baselines for ‘master’:</p>
 </div>
 </section>
 <section id="adding-tests">
-<h2><span class="section-number">8.5. </span>Adding tests<a class="headerlink" href="#adding-tests" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.5. </span>Adding tests<a class="headerlink" href="#adding-tests" title="Link to this heading"></a></h2>
 <p id="id10">E3SM</p>
 <p>Open the config/e3sm/tests.py file, you’ll see a python dict at the top
 of the file called _TESTS, find the test category you want to
@@ -650,7 +650,7 @@ and follow the <a class="reference internal" href="#individual">individual</a> t
 If you want this test to be part of a suite, then it must be described in the relevant testlists_YYY.xml file.</p>
 </section>
 <section id="cime-developer-s-guide">
-<h2><span class="section-number">8.6. </span>CIME Developer’s guide<a class="headerlink" href="#cime-developer-s-guide" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">8.6. </span>CIME Developer’s guide<a class="headerlink" href="#cime-developer-s-guide" title="Link to this heading"></a></h2>
 <p id="id11">The CIME Developer’s guide can be found on the project’s GitHub <a class="reference external" href="https://github.com/ESMCI/cime/wiki/CIME-Developers-Guide">wiki</a>.</p>
 </section>
 </section>

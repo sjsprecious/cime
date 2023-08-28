@@ -11,11 +11,11 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/pop_ver.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -112,7 +112,9 @@
 <span class="c1"># pragma pylint: disable=attribute-defined-outside-init</span>
 
 
-<div class="viewcode-block" id="EnvBatch"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch">[docs]</a><span class="k">class</span> <span class="nc">EnvBatch</span><span class="p">(</span><span class="n">EnvBase</span><span class="p">):</span>
+<div class="viewcode-block" id="EnvBatch">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch">[docs]</a>
+<span class="k">class</span> <span class="nc">EnvBatch</span><span class="p">(</span><span class="n">EnvBase</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case_root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">infile</span><span class="o">=</span><span class="s2">&quot;env_batch.xml&quot;</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        initialize an object interface to file env_batch.xml in the case directory</span>
@@ -127,7 +129,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_batch_system_type</span><span class="p">()</span>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="EnvBatch.set_value"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_value">[docs]</a>    <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_type</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="EnvBatch.set_value">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_type</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Override the entry_id set_value function with some special cases for this class</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -158,8 +162,11 @@
 
         <span class="k">return</span> <span class="n">val</span></div>
 
+
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="EnvBatch.get_value"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="EnvBatch.get_value">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolved</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Must default subgroup to something in order to provide single return value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -182,7 +189,10 @@
 
         <span class="k">return</span> <span class="n">value</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_type_info"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_type_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_type_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vid</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_type_info">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_type_info">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_type_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vid</span><span class="p">):</span>
         <span class="n">gnodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">gnode</span> <span class="ow">in</span> <span class="n">gnodes</span><span class="p">:</span>
             <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span><span class="s2">&quot;entry&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">vid</span><span class="p">},</span> <span class="n">root</span><span class="o">=</span><span class="n">gnode</span><span class="p">)</span>
@@ -200,7 +210,10 @@
                     <span class="p">)</span>
         <span class="k">return</span> <span class="n">type_info</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_jobs"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_jobs">[docs]</a>    <span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_jobs">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_jobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)</span>
         <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
@@ -209,7 +222,10 @@
 
         <span class="k">return</span> <span class="n">results</span></div>
 
-<div class="viewcode-block" id="EnvBatch.create_job_groups"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.create_job_groups">[docs]</a>    <span class="k">def</span> <span class="nf">create_job_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_jobs</span><span class="p">,</span> <span class="n">is_test</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.create_job_groups">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.create_job_groups">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_job_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_jobs</span><span class="p">,</span> <span class="n">is_test</span><span class="p">):</span>
         <span class="c1"># Subtle: in order to support dynamic batch jobs, we need to remove the</span>
         <span class="c1"># job_submission group and replace with job-based groups</span>
 
@@ -245,7 +261,10 @@
                 <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">childnodes</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">child</span><span class="p">),</span> <span class="n">root</span><span class="o">=</span><span class="n">new_job_group</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EnvBatch.cleanupnode"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.cleanupnode">[docs]</a>    <span class="k">def</span> <span class="nf">cleanupnode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.cleanupnode">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.cleanupnode">[docs]</a>
+    <span class="k">def</span> <span class="nf">cleanupnode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;batch_system&quot;</span><span class="p">:</span>
             <span class="n">fnode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_child</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;file&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">node</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">remove_child</span><span class="p">(</span><span class="n">fnode</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">node</span><span class="p">)</span>
@@ -258,7 +277,10 @@
             <span class="n">node</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">EnvBatch</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">cleanupnode</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">node</span></div>
 
-<div class="viewcode-block" id="EnvBatch.set_batch_system"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_batch_system">[docs]</a>    <span class="k">def</span> <span class="nf">set_batch_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batchobj</span><span class="p">,</span> <span class="n">batch_system_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.set_batch_system">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_batch_system">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_batch_system</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batchobj</span><span class="p">,</span> <span class="n">batch_system_type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">batch_system_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_batch_system_type</span><span class="p">(</span><span class="n">batch_system_type</span><span class="p">)</span>
 
@@ -283,7 +305,10 @@
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_caseroot</span><span class="p">,</span> <span class="s2">&quot;LockedFiles&quot;</span><span class="p">)):</span>
             <span class="n">lock_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">batchobj</span><span class="o">.</span><span class="n">filename</span><span class="p">),</span> <span class="n">caseroot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_caseroot</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_job_overrides"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_job_overrides">[docs]</a>    <span class="k">def</span> <span class="nf">get_job_overrides</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_job_overrides">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_job_overrides">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_job_overrides</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
         <span class="n">env_workflow</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">&quot;workflow&quot;</span><span class="p">)</span>
         <span class="p">(</span>
             <span class="n">total_tasks</span><span class="p">,</span>
@@ -310,7 +335,10 @@
         <span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;mpirun&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_mpirun_cmd</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="n">job</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="n">overrides</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">overrides</span></div>
 
-<div class="viewcode-block" id="EnvBatch.make_batch_script"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.make_batch_script">[docs]</a>    <span class="k">def</span> <span class="nf">make_batch_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_template</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.make_batch_script">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.make_batch_script">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_batch_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_template</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">expect</span><span class="p">(</span>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">input_template</span><span class="p">),</span>
             <span class="s2">&quot;input file &#39;</span><span class="si">{}</span><span class="s2">&#39; does not exist&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">input_template</span><span class="p">),</span>
@@ -348,7 +376,10 @@
             <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">output_name</span><span class="p">)</span><span class="o">.</span><span class="n">st_mode</span> <span class="o">|</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IXUSR</span> <span class="o">|</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IXGRP</span> <span class="o">|</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_IXOTH</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="EnvBatch.set_job_defaults"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_job_defaults">[docs]</a>    <span class="k">def</span> <span class="nf">set_job_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_jobs</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.set_job_defaults">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_job_defaults">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_job_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_jobs</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_batch_system_type</span><span class="p">()</span>
 
@@ -521,6 +552,7 @@
                 <span class="s2">&quot;Job </span><span class="si">{}</span><span class="s2"> queue </span><span class="si">{}</span><span class="s2"> walltime </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">queue</span><span class="p">),</span> <span class="n">walltime</span><span class="p">)</span>
             <span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="nf">_match_attribs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attribs</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
         <span class="c1"># check for matches with case-vars</span>
         <span class="k">for</span> <span class="n">attrib</span> <span class="ow">in</span> <span class="n">attribs</span><span class="p">:</span>
@@ -560,7 +592,9 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
 
-<div class="viewcode-block" id="EnvBatch.get_batch_directives"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_batch_directives">[docs]</a>    <span class="k">def</span> <span class="nf">get_batch_directives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="EnvBatch.get_batch_directives">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_batch_directives">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_batch_directives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
         <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">directive_prefix</span> <span class="o">=</span> <span class="kc">None</span>
@@ -641,7 +675,10 @@
 
         <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_submit_args"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_submit_args">[docs]</a>    <span class="k">def</span> <span class="nf">get_submit_args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">resolve</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_submit_args">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_submit_args">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_submit_args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">resolve</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        return a list of touples (flag, name)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -652,6 +689,7 @@
         <span class="n">submitargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_args</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">submit_arg_nodes</span><span class="p">,</span> <span class="n">job</span><span class="p">,</span> <span class="n">resolve</span><span class="o">=</span><span class="n">resolve</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">submitargs</span></div>
+
 
     <span class="k">def</span> <span class="nf">_get_arg_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">bs_nodes</span><span class="p">):</span>
         <span class="n">submit_arg_nodes</span> <span class="o">=</span> <span class="p">[]</span>
@@ -706,6 +744,9 @@
                 <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">resolve</span> <span class="ow">and</span> <span class="s2">&quot;$&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
                         <span class="n">rflag</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resolve_argument</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span>
+                        <span class="c1"># This is to prevent -gpu_type=none in qsub args</span>
+                        <span class="k">if</span> <span class="n">rflag</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;=none&quot;</span><span class="p">):</span>
+                            <span class="k">continue</span>
                         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rflag</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag</span><span class="p">):</span>
                             <span class="n">submitargs</span> <span class="o">+=</span> <span class="s2">&quot; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rflag</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
@@ -795,7 +836,9 @@
 
         <span class="k">return</span> <span class="n">submitargs</span>
 
-<div class="viewcode-block" id="EnvBatch.submit_jobs"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.submit_jobs">[docs]</a>    <span class="k">def</span> <span class="nf">submit_jobs</span><span class="p">(</span>
+<div class="viewcode-block" id="EnvBatch.submit_jobs">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.submit_jobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">submit_jobs</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">case</span><span class="p">,</span>
         <span class="n">no_batch</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -924,6 +967,7 @@
             <span class="k">return</span> <span class="n">jobcmds</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">depid</span></div>
+
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_get_supported_args</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">no_batch</span><span class="p">):</span>
@@ -1194,7 +1238,9 @@
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Submitted job id is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">jobid</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">jobid</span>
 
-<div class="viewcode-block" id="EnvBatch.get_batch_mail_type"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_batch_mail_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_batch_mail_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mail_type</span><span class="p">):</span>
+<div class="viewcode-block" id="EnvBatch.get_batch_mail_type">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_batch_mail_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_batch_mail_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mail_type</span><span class="p">):</span>
         <span class="n">raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;batch_mail_type&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="n">mail_types</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
@@ -1203,7 +1249,10 @@
 
         <span class="k">return</span> <span class="n">mail_types</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">if</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">mail_types</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_batch_system_type"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_batch_system_type">[docs]</a>    <span class="k">def</span> <span class="nf">get_batch_system_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_batch_system_type">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_batch_system_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_batch_system_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span><span class="s2">&quot;batch_system&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
             <span class="n">type_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">)</span>
@@ -1211,10 +1260,16 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span> <span class="o">=</span> <span class="n">type_</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span></div>
 
-<div class="viewcode-block" id="EnvBatch.set_batch_system_type"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_batch_system_type">[docs]</a>    <span class="k">def</span> <span class="nf">set_batch_system_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batchtype</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.set_batch_system_type">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.set_batch_system_type">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_batch_system_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batchtype</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span> <span class="o">=</span> <span class="n">batchtype</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_job_id"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_job_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_job_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_job_id">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_job_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_job_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
         <span class="n">jobid_pattern</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;jobid_pattern&quot;</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_batchtype</span> <span class="o">!=</span> <span class="s2">&quot;none&quot;</span><span class="p">:</span>
             <span class="n">expect</span><span class="p">(</span>
@@ -1233,7 +1288,10 @@
         <span class="n">jobid</span> <span class="o">=</span> <span class="n">search_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">jobid</span></div>
 
-<div class="viewcode-block" id="EnvBatch.queue_meets_spec"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.queue_meets_spec">[docs]</a>    <span class="k">def</span> <span class="nf">queue_meets_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">,</span> <span class="n">num_tasks</span><span class="p">,</span> <span class="n">walltime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.queue_meets_spec">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.queue_meets_spec">[docs]</a>
+    <span class="k">def</span> <span class="nf">queue_meets_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">,</span> <span class="n">num_tasks</span><span class="p">,</span> <span class="n">walltime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">specs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queue_specs</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
 
         <span class="n">nodemin</span><span class="p">,</span> <span class="n">nodemax</span><span class="p">,</span> <span class="n">jobname</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">walltimemax</span><span class="p">,</span> <span class="n">jobmin</span><span class="p">,</span> <span class="n">jobmax</span><span class="p">,</span> <span class="n">strict</span> <span class="o">=</span> <span class="n">specs</span>
@@ -1262,6 +1320,7 @@
 
         <span class="k">return</span> <span class="kc">True</span></div>
 
+
     <span class="k">def</span> <span class="nf">_get_all_queue_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">all_queues</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">all_queues</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_queues</span><span class="p">()</span>
@@ -1272,7 +1331,9 @@
 
         <span class="k">return</span> <span class="n">queue_names</span>
 
-<div class="viewcode-block" id="EnvBatch.select_best_queue"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.select_best_queue">[docs]</a>    <span class="k">def</span> <span class="nf">select_best_queue</span><span class="p">(</span>
+<div class="viewcode-block" id="EnvBatch.select_best_queue">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.select_best_queue">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_best_queue</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">num_nodes</span><span class="p">,</span> <span class="n">num_tasks</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">walltime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job</span><span class="o">=</span><span class="kc">None</span>
     <span class="p">):</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
@@ -1294,7 +1355,10 @@
 
         <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_queue_specs"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_queue_specs">[docs]</a>    <span class="k">def</span> <span class="nf">get_queue_specs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qnode</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_queue_specs">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_queue_specs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_queue_specs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qnode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get queue specifications from node.</span>
 
@@ -1337,7 +1401,10 @@
             <span class="n">strict</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_default_queue"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_default_queue">[docs]</a>    <span class="k">def</span> <span class="nf">get_default_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_default_queue">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_default_queue">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_default_queue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">bs_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span><span class="s2">&quot;batch_system&quot;</span><span class="p">)</span>
         <span class="n">node</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">for</span> <span class="n">bsnode</span> <span class="ow">in</span> <span class="n">bs_nodes</span><span class="p">:</span>
@@ -1352,7 +1419,10 @@
         <span class="n">expect</span><span class="p">(</span><span class="n">node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;No queues found&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">node</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_all_queues"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_all_queues">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_queues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_all_queues">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_all_queues">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_all_queues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">bs_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span><span class="s2">&quot;batch_system&quot;</span><span class="p">)</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">default_idx</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1374,7 +1444,10 @@
 
         <span class="k">return</span> <span class="n">nodes</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_children"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_children">[docs]</a>    <span class="k">def</span> <span class="nf">get_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_children">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_children">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_children</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;PROJECT_REQUIRED&quot;</span><span class="p">:</span>
             <span class="n">nodes</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">EnvBatch</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span>
                 <span class="s2">&quot;entry&quot;</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">},</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span>
@@ -1386,7 +1459,10 @@
 
         <span class="k">return</span> <span class="n">nodes</span></div>
 
-<div class="viewcode-block" id="EnvBatch.get_status"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_status">[docs]</a>    <span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobid</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.get_status">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.get_status">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobid</span><span class="p">):</span>
         <span class="n">batch_query</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_optional_child</span><span class="p">(</span><span class="s2">&quot;batch_query&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">batch_query</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Batch queries not supported on this platform&quot;</span><span class="p">)</span>
@@ -1405,7 +1481,10 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">out</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="EnvBatch.cancel_job"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.cancel_job">[docs]</a>    <span class="k">def</span> <span class="nf">cancel_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobid</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.cancel_job">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.cancel_job">[docs]</a>
+    <span class="k">def</span> <span class="nf">cancel_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobid</span><span class="p">):</span>
         <span class="n">batch_cancel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_optional_child</span><span class="p">(</span><span class="s2">&quot;batch_cancel&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">batch_cancel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Batch cancellation not supported on this platform&quot;</span><span class="p">)</span>
@@ -1423,7 +1502,10 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="EnvBatch.compare_xml"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.compare_xml">[docs]</a>    <span class="k">def</span> <span class="nf">compare_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.compare_xml">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.compare_xml">[docs]</a>
+    <span class="k">def</span> <span class="nf">compare_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="n">xmldiffs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">f1batchnodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_children</span><span class="p">(</span><span class="s2">&quot;batch_system&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">bnode</span> <span class="ow">in</span> <span class="n">f1batchnodes</span><span class="p">:</span>
@@ -1458,7 +1540,10 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">xmldiffs</span></div>
 
-<div class="viewcode-block" id="EnvBatch.make_all_batch_files"><a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.make_all_batch_files">[docs]</a>    <span class="k">def</span> <span class="nf">make_all_batch_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
+
+<div class="viewcode-block" id="EnvBatch.make_all_batch_files">
+<a class="viewcode-back" href="../../../CIME_api/CIME.XML.html#CIME.XML.env_batch.EnvBatch.make_all_batch_files">[docs]</a>
+    <span class="k">def</span> <span class="nf">make_all_batch_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
         <span class="n">machdir</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;MACHDIR&quot;</span><span class="p">)</span>
         <span class="n">env_workflow</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="s2">&quot;workflow&quot;</span><span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Creating batch scripts&quot;</span><span class="p">)</span>
@@ -1484,7 +1569,9 @@
                     <span class="s2">&quot;Input template file </span><span class="si">{}</span><span class="s2"> for job </span><span class="si">{}</span><span class="s2"> does not exist or cannot be read.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                         <span class="n">input_batch_script</span><span class="p">,</span> <span class="n">job</span>
                     <span class="p">)</span>
-                <span class="p">)</span></div></div>
+                <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>
