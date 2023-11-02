@@ -109,6 +109,7 @@
 <span class="c1">#     &quot;inherit&quot; : (suite1, suite2, ...), # Optional. Suites to inherit tests from. Default is None. Tuple, list, or str.</span>
 <span class="c1">#     &quot;time&quot;    : &quot;HH:MM:SS&quot;,            # Optional. Recommended upper-limit on test time.</span>
 <span class="c1">#     &quot;share&quot;   : True|False,            # Optional. If True, all tests in this suite share a build. Default is False.</span>
+<span class="c1">#     &quot;perf&quot;    : True|False,            # Optional. If True, all tests in this suite will do performance tracking. Default is False.</span>
 <span class="c1">#     &quot;tests&quot;   : (test1, test2, ...)    # Optional. The list of tests for this suite. See above for format. Tuple, list, or str. This is the ONLY inheritable attribute.</span>
 <span class="c1"># }</span>
 
@@ -174,6 +175,20 @@
             <span class="s2">&quot;SMS_P8.f19_g16_rx1.X&quot;</span><span class="p">,</span>
             <span class="s2">&quot;SMS_P16.f19_g16_rx1.X&quot;</span><span class="p">,</span>
         <span class="p">),</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;cime_test_perf&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;0:10:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;perf&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;tests&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s2">&quot;SMS_P2.T42_T42.S&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SMS_P4.T42_T42.S&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SMS_P8.T42_T42.S&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SMS_P16.T42_T42.S&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;cime_test_timing&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;0:10:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tests&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;SMS_P1.T42_T42.S&quot;</span><span class="p">,),</span>
     <span class="p">},</span>
     <span class="s2">&quot;cime_test_repeat&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;tests&quot;</span><span class="p">:</span> <span class="p">(</span>
@@ -247,12 +262,12 @@
 <span class="k">def</span> <span class="nf">get_test_data</span><span class="p">(</span><span class="n">suite</span><span class="p">):</span>
     <span class="c1">###############################################################################</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    For a given suite, returns (inherit, time, share, tests)</span>
+<span class="sd">    For a given suite, returns (inherit, time, share, perf, tests)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">raw_dict</span> <span class="o">=</span> <span class="n">_ALL_TESTS</span><span class="p">[</span><span class="n">suite</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">raw_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">expect</span><span class="p">(</span>
-            <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;inherit&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;share&quot;</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">],</span>
+            <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;inherit&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;share&quot;</span><span class="p">,</span> <span class="s2">&quot;perf&quot;</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">],</span>
             <span class="s2">&quot;Unexpected test key &#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">),</span>
         <span class="p">)</span>
 
@@ -260,6 +275,7 @@
         <span class="n">_get_key_data</span><span class="p">(</span><span class="n">raw_dict</span><span class="p">,</span> <span class="s2">&quot;inherit&quot;</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">),</span>
         <span class="n">_get_key_data</span><span class="p">(</span><span class="n">raw_dict</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span>
         <span class="n">_get_key_data</span><span class="p">(</span><span class="n">raw_dict</span><span class="p">,</span> <span class="s2">&quot;share&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">),</span>
+        <span class="n">_get_key_data</span><span class="p">(</span><span class="n">raw_dict</span><span class="p">,</span> <span class="s2">&quot;perf&quot;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">),</span>
         <span class="n">_get_key_data</span><span class="p">(</span><span class="n">raw_dict</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">),</span>
     <span class="p">)</span></div>
 
@@ -295,7 +311,7 @@
         <span class="s2">&quot;Compiler </span><span class="si">{}</span><span class="s2"> not valid for machine </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiler</span><span class="p">,</span> <span class="n">machine</span><span class="p">),</span>
     <span class="p">)</span>
 
-    <span class="n">inherits_from</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">tests_raw</span> <span class="o">=</span> <span class="n">get_test_data</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+    <span class="n">inherits_from</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">tests_raw</span> <span class="o">=</span> <span class="n">get_test_data</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
     <span class="n">tests</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">tests_raw</span><span class="p">:</span>
         <span class="n">expect</span><span class="p">(</span>
@@ -396,6 +412,35 @@
             <span class="n">build_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(([</span><span class="n">test</span><span class="p">],</span> <span class="n">my_share_suites</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">build_groups</span><span class="p">]</span></div>
+
+
+
+<span class="c1">###############################################################################</span>
+<div class="viewcode-block" id="is_perf_test">
+<a class="viewcode-back" href="../../CIME_api/CIME.html#CIME.get_tests.is_perf_test">[docs]</a>
+<span class="k">def</span> <span class="nf">is_perf_test</span><span class="p">(</span><span class="n">test</span><span class="p">):</span>
+    <span class="c1">###############################################################################</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Is the provided test in a suite with perf=True?</span>
+
+<span class="sd">    &gt;&gt;&gt; is_perf_test(&quot;SMS_P2.T42_T42.S.melvin_gnu&quot;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; is_perf_test(&quot;SMS_P2.f19_g16_rx1.X.melvin_gnu&quot;)</span>
+<span class="sd">    False</span>
+<span class="sd">    &gt;&gt;&gt; is_perf_test(&quot;PFS_P2.f19_g16_rx1.X.melvin_gnu&quot;)</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get a list of performance suites</span>
+    <span class="k">if</span> <span class="n">test</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;PFS&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">suites</span> <span class="o">=</span> <span class="n">get_test_suites</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">suite</span> <span class="ow">in</span> <span class="n">suites</span><span class="p">:</span>
+            <span class="n">perf</span> <span class="o">=</span> <span class="n">get_test_data</span><span class="p">(</span><span class="n">suite</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">perf</span> <span class="ow">and</span> <span class="n">suite_has_test</span><span class="p">(</span><span class="n">suite</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">skip_inherit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span></div>
 
 
 

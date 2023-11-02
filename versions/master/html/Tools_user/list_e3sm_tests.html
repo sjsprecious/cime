@@ -167,11 +167,16 @@ positional arguments:
   suites                The tests suites to list. Test suites: cime_tiny,
                         cime_test_only_pass, cime_test_only_slow_pass,
                         cime_test_only, cime_test_all, cime_test_share,
-                        cime_test_share2, cime_test_repeat, cime_test_time,
+                        cime_test_share2, cime_test_perf, cime_test_timing,
+                        cime_test_repeat, cime_test_time,
                         cime_test_multi_inherit, cime_developer
 
 options:
   -h, --help            show this help message and exit
+  -t {compsets,grids,testcases,tests}, --thing-to-list {compsets,grids,testcases,tests}
+                        The thing you want to list (default: tests)
+
+Logging options:
   -d, --debug           Print debug information (very verbose) to file /home/r
                         unner/work/cime/cime/CIME/Tools/list_e3sm_tests.log
                         (default: False)
@@ -179,8 +184,6 @@ options:
                         (default: False)
   -s, --silent          Print only warnings and error messages (default:
                         False)
-  -t {compsets,grids,testcases,tests}, --thing-to-list {compsets,grids,testcases,tests}
-                        The thing you want to list (default: tests)
 </pre></div>
 </div>
 </section>

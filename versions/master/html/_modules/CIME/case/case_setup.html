@@ -227,12 +227,29 @@
     <span class="c1">###############################################################################</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">caseroot</span><span class="p">,</span> <span class="s2">&quot;Macros.cmake&quot;</span><span class="p">)):</span>
         <span class="n">safe_copy</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cmake_macros_dir</span><span class="p">,</span> <span class="s2">&quot;Macros.cmake&quot;</span><span class="p">),</span> <span class="n">caseroot</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">caseroot</span><span class="p">,</span> <span class="s2">&quot;cmake_macros&quot;</span><span class="p">)):</span>
-        <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">cmake_macros_dir</span><span class="p">,</span> <span class="n">case_cmake_path</span><span class="p">)</span>
 
-    <span class="n">copy_depends_files</span><span class="p">(</span>
-        <span class="n">mach_obj</span><span class="o">.</span><span class="n">get_machine_name</span><span class="p">(),</span> <span class="n">mach_obj</span><span class="o">.</span><span class="n">machines_dir</span><span class="p">,</span> <span class="n">caseroot</span><span class="p">,</span> <span class="n">compiler</span>
-    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">case_cmake_path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">case_cmake_path</span><span class="p">)</span>
+
+    <span class="c1"># This impl is coupled to contents of Macros.cmake</span>
+    <span class="n">os_</span> <span class="o">=</span> <span class="n">mach_obj</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;OS&quot;</span><span class="p">)</span>
+    <span class="n">mach</span> <span class="o">=</span> <span class="n">mach_obj</span><span class="o">.</span><span class="n">get_machine_name</span><span class="p">()</span>
+    <span class="n">macros</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;universal.cmake&quot;</span><span class="p">,</span>
+        <span class="n">os_</span> <span class="o">+</span> <span class="s2">&quot;.cmake&quot;</span><span class="p">,</span>
+        <span class="n">compiler</span> <span class="o">+</span> <span class="s2">&quot;.cmake&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">.cmake&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiler</span><span class="p">,</span> <span class="n">os</span><span class="p">),</span>
+        <span class="n">mach</span> <span class="o">+</span> <span class="s2">&quot;.cmake&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">.cmake&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compiler</span><span class="p">,</span> <span class="n">mach</span><span class="p">),</span>
+        <span class="s2">&quot;CMakeLists.txt&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">macro</span> <span class="ow">in</span> <span class="n">macros</span><span class="p">:</span>
+        <span class="n">repo_macro</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cmake_macros_dir</span><span class="p">,</span> <span class="n">macro</span><span class="p">)</span>
+        <span class="n">case_macro</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">case_cmake_path</span><span class="p">,</span> <span class="n">macro</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">case_macro</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">repo_macro</span><span class="p">):</span>
+            <span class="n">safe_copy</span><span class="p">(</span><span class="n">repo_macro</span><span class="p">,</span> <span class="n">case_cmake_path</span><span class="p">)</span>
+
+    <span class="n">copy_depends_files</span><span class="p">(</span><span class="n">mach</span><span class="p">,</span> <span class="n">mach_obj</span><span class="o">.</span><span class="n">machines_dir</span><span class="p">,</span> <span class="n">caseroot</span><span class="p">,</span> <span class="n">compiler</span><span class="p">)</span>
 
 
 <span class="c1">###############################################################################</span>

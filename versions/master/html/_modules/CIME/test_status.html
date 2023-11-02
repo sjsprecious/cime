@@ -575,7 +575,7 @@
                     <span class="k">if</span> <span class="n">rv</span> <span class="o">==</span> <span class="n">TEST_PASS_STATUS</span><span class="p">:</span>
                         <span class="n">rv</span> <span class="o">=</span> <span class="n">NAMELIST_FAIL_STATUS</span>
 
-                <span class="k">elif</span> <span class="n">phase</span> <span class="o">==</span> <span class="n">BASELINE_PHASE</span><span class="p">:</span>
+                <span class="k">elif</span> <span class="n">phase</span> <span class="ow">in</span> <span class="p">[</span><span class="n">BASELINE_PHASE</span><span class="p">,</span> <span class="n">THROUGHPUT_PHASE</span><span class="p">,</span> <span class="n">MEMCOMP_PHASE</span><span class="p">]:</span>
                     <span class="k">if</span> <span class="n">rv</span> <span class="ow">in</span> <span class="p">[</span><span class="n">NAMELIST_FAIL_STATUS</span><span class="p">,</span> <span class="n">TEST_PASS_STATUS</span><span class="p">]:</span>
                         <span class="n">phase_responsible_for_status</span> <span class="o">=</span> <span class="n">phase</span>
                         <span class="n">rv</span> <span class="o">=</span> <span class="n">TEST_DIFF_STATUS</span>
@@ -629,7 +629,9 @@
 <span class="sd">        &gt;&gt;&gt; _test_helper2(&#39;PASS ERS.foo.A RUN\nFAIL ERS.foo.A TPUTCOMP&#39;)</span>
 <span class="sd">        (&#39;PASS&#39;, &#39;RUN&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; _test_helper2(&#39;PASS ERS.foo.A RUN\nFAIL ERS.foo.A TPUTCOMP&#39;, check_throughput=True)</span>
-<span class="sd">        (&#39;FAIL&#39;, &#39;TPUTCOMP&#39;)</span>
+<span class="sd">        (&#39;DIFF&#39;, &#39;TPUTCOMP&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; _test_helper2(&#39;PASS ERS.foo.A RUN\nFAIL ERS.foo.A MEMCOMP&#39;, check_memory=True)</span>
+<span class="sd">        (&#39;DIFF&#39;, &#39;MEMCOMP&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; _test_helper2(&#39;PASS ERS.foo.A MODEL_BUILD\nPASS ERS.foo.A RUN\nFAIL ERS.foo.A NLCOMP&#39;)</span>
 <span class="sd">        (&#39;NLFAIL&#39;, &#39;RUN&#39;)</span>
 <span class="sd">        &gt;&gt;&gt; _test_helper2(&#39;PASS ERS.foo.A MODEL_BUILD\nPEND ERS.foo.A RUN\nFAIL ERS.foo.A NLCOMP&#39;)</span>

@@ -115,9 +115,22 @@
 <a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_case.TestCaseSubmit.test_check_case">[docs]</a>
     <span class="k">def</span> <span class="nf">test_check_case</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">case</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
+        <span class="c1"># get_value arguments TEST, COMP_WAV, COMP_INTERFACE, BUILD_COMPLETE</span>
+        <span class="k">case</span><span class="o">.</span><span class="n">get_value</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
         <span class="n">case_submit</span><span class="o">.</span><span class="n">check_case</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">chksum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">case</span><span class="o">.</span><span class="n">check_all_input_data</span><span class="o">.</span><span class="n">assert_called_with</span><span class="p">(</span><span class="n">chksum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TestCaseSubmit.test_check_case_test">
+<a class="viewcode-back" href="../../../CIME_api/CIME.tests.html#CIME.tests.test_unit_case.TestCaseSubmit.test_check_case_test">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_check_case_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">case</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">MagicMock</span><span class="p">()</span>
+        <span class="c1"># get_value arguments TEST, COMP_WAV, COMP_INTERFACE, BUILD_COMPLETE</span>
+        <span class="k">case</span><span class="o">.</span><span class="n">get_value</span><span class="o">.</span><span class="n">side_effect</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+        <span class="n">case_submit</span><span class="o">.</span><span class="n">check_case</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">chksum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">case</span><span class="o">.</span><span class="n">check_all_input_data</span><span class="o">.</span><span class="n">assert_not_called</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="TestCaseSubmit.test__submit">

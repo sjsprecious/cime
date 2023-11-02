@@ -1878,20 +1878,25 @@
 <div class="viewcode-block" id="setup_standard_logging_options">
 <a class="viewcode-back" href="../../CIME_api/CIME.html#CIME.utils.setup_standard_logging_options">[docs]</a>
 <span class="k">def</span> <span class="nf">setup_standard_logging_options</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">add_argument_group</span><span class="p">(</span><span class="s2">&quot;Logging options&quot;</span><span class="p">)</span>
+
     <span class="n">helpfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.log&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;-d&quot;</span><span class="p">,</span>
         <span class="s2">&quot;--debug&quot;</span><span class="p">,</span>
         <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Print debug information (very verbose) to file </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">helpfile</span><span class="p">),</span>
     <span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;-v&quot;</span><span class="p">,</span>
         <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span>
         <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Add additional context (time and file) to log messages&quot;</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+
+    <span class="n">group</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;-s&quot;</span><span class="p">,</span>
         <span class="s2">&quot;--silent&quot;</span><span class="p">,</span>
         <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
@@ -3095,6 +3100,34 @@
                     <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="add_flag_to_cmd">
+<a class="viewcode-back" href="../../CIME_api/CIME.html#CIME.utils.add_flag_to_cmd">[docs]</a>
+<span class="k">def</span> <span class="nf">add_flag_to_cmd</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given a flag and value for a shell command, return a string</span>
+
+<span class="sd">    &gt;&gt;&gt; add_flag_to_cmd(&quot;-f&quot;, &quot;hi&quot;)</span>
+<span class="sd">    &#39;-f hi&#39;</span>
+<span class="sd">    &gt;&gt;&gt; add_flag_to_cmd(&quot;--foo&quot;, 42)</span>
+<span class="sd">    &#39;--foo 42&#39;</span>
+<span class="sd">    &gt;&gt;&gt; add_flag_to_cmd(&quot;--foo=&quot;, 42)</span>
+<span class="sd">    &#39;--foo=42&#39;</span>
+<span class="sd">    &gt;&gt;&gt; add_flag_to_cmd(&quot;--foo:&quot;, 42)</span>
+<span class="sd">    &#39;--foo:42&#39;</span>
+<span class="sd">    &gt;&gt;&gt; add_flag_to_cmd(&quot;--foo:&quot;, &quot; hi &quot;)</span>
+<span class="sd">    &#39;--foo:hi&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">no_space_chars</span> <span class="o">=</span> <span class="s2">&quot;=:&quot;</span>
+    <span class="n">no_space</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">no_space_chars</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">flag</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+            <span class="n">no_space</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">separator</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">no_space</span> <span class="k">else</span> <span class="s2">&quot; &quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">separator</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
 
 </pre></div>
 

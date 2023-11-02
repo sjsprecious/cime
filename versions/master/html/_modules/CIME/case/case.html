@@ -295,6 +295,16 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">initialize_derived_attributes</span><span class="p">()</span>
 
+<div class="viewcode-block" id="Case.get_baseline_dir">
+<a class="viewcode-back" href="../../../CIME_api/CIME.case.html#CIME.case.case.Case.get_baseline_dir">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_baseline_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">baseline_root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;BASELINE_ROOT&quot;</span><span class="p">)</span>
+
+        <span class="n">baseline_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;BASECMP_CASE&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">baseline_root</span><span class="p">,</span> <span class="n">baseline_name</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="Case.check_if_comp_var">
 <a class="viewcode-back" href="../../../CIME_api/CIME.case.html#CIME.case.case.Case.check_if_comp_var">[docs]</a>
     <span class="k">def</span> <span class="nf">check_if_comp_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vid</span><span class="p">):</span>
@@ -1740,9 +1750,9 @@
             <span class="p">)</span>
 
         <span class="c1"># Set these two GPU XML variables here to overwrite the default values</span>
-        <span class="k">if</span> <span class="n">gpu_type</span><span class="p">:</span>
+        <span class="c1"># Only set them for &quot;cesm&quot; model</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cime_model</span> <span class="o">==</span> <span class="s2">&quot;cesm&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;GPU_TYPE&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">gpu_type</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-        <span class="k">if</span> <span class="n">gpu_offload</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;GPU_OFFLOAD&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">gpu_offload</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">initialize_derived_attributes</span><span class="p">()</span>

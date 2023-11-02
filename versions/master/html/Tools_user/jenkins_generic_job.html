@@ -166,13 +166,6 @@ test results and ensures that the batch system is left in a clean state.
 
 options:
   -h, --help            show this help message and exit
-  -d, --debug           Print debug information (very verbose) to file /home/r
-                        unner/work/cime/cime/CIME/Tools/jenkins_generic_job.lo
-                        g (default: False)
-  -v, --verbose         Add additional context (time and file) to log messages
-                        (default: False)
-  -s, --silent          Print only warnings and error messages (default:
-                        False)
   -g, --generate-baselines
                         Generate baselines (default: False)
   --baseline-compare    Do baseline comparisons. Off by default. (default:
@@ -237,11 +230,22 @@ options:
   --check-memory        Fail if memory check fails (fail if tests footprint
                         grows) (default: False)
   --ignore-memleak      Do not fail if there are memleaks (default: False)
+  --save-timing         Tell create_test to save timings of tests (default:
+                        False)
   --pes-file PES_FILE   Full pathname of an optional pes specification file.
                         The file can follow either the config_pes.xml or the
                         env_mach_pes.xml format. (default: None)
   --jenkins-id JENKINS_ID
                         Specify an &#39;id&#39; for the Jenkins jobs. (default: None)
+
+Logging options:
+  -d, --debug           Print debug information (very verbose) to file /home/r
+                        unner/work/cime/cime/CIME/Tools/jenkins_generic_job.lo
+                        g (default: False)
+  -v, --verbose         Add additional context (time and file) to log messages
+                        (default: False)
+  -s, --silent          Print only warnings and error messages (default:
+                        False)
 </pre></div>
 </div>
 </section>

@@ -169,9 +169,6 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
-  -d, --debug           Print debug information (very verbose) to file /home/runner/work/cime/cime/CIME/Tools/case.setup.log
-  -v, --verbose         Add additional context (time and file) to log messages
-  -s, --silent          Print only warnings and error messages
   -c, --clean           Removes the batch run script for target machine.
                         If the testmode argument is present then keep the test
                         script if it is present - otherwise remove it.
@@ -183,6 +180,11 @@ options:
                         has already been run for this case.
   -k KEEP, --keep KEEP  When cleaning/resetting a case, do not remove/refresh files in this list. Choices are batch script, env_mach_specific.xml, Macros.make, Macros.cmake. Use should use this if you have local modifications to these files that you want to keep.
   -N, --non-local       Use when you&#39;ve requested a machine that you aren&#39;t on. Will reduce errors for missing directories etc.
+
+Logging options:
+  -d, --debug           Print debug information (very verbose) to file /home/runner/work/cime/cime/CIME/Tools/case.setup.log
+  -v, --verbose         Add additional context (time and file) to log messages
+  -s, --silent          Print only warnings and error messages
 </pre></div>
 </div>
 </section>

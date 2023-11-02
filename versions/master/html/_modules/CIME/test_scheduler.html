@@ -99,7 +99,7 @@
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 
 <span class="kn">from</span> <span class="nn">CIME.XML.standard_module_setup</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">CIME.get_tests</span> <span class="kn">import</span> <span class="n">get_recommended_test_time</span><span class="p">,</span> <span class="n">get_build_groups</span>
+<span class="kn">from</span> <span class="nn">CIME.get_tests</span> <span class="kn">import</span> <span class="n">get_recommended_test_time</span><span class="p">,</span> <span class="n">get_build_groups</span><span class="p">,</span> <span class="n">is_perf_test</span>
 <span class="kn">from</span> <span class="nn">CIME.utils</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">append_status</span><span class="p">,</span>
     <span class="n">append_testlog</span><span class="p">,</span>
@@ -1058,7 +1058,10 @@
                 <span class="p">)</span>
             <span class="n">envtest</span><span class="o">.</span><span class="n">set_initial_values</span><span class="p">(</span><span class="n">case</span><span class="p">)</span>
             <span class="k">case</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;TEST&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-            <span class="k">case</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;SAVE_TIMING&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_timing</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">is_perf_test</span><span class="p">(</span><span class="n">test</span><span class="p">):</span>
+                <span class="k">case</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;SAVE_TIMING&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">case</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="s2">&quot;SAVE_TIMING&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_timing</span><span class="p">)</span>
 
             <span class="c1"># handle single-exe here, all cases will use the EXEROOT from</span>
             <span class="c1"># the first case in the build group</span>

@@ -21,7 +21,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CIME.build_scripts package" href="CIME.build_scripts.html" />
+    <link rel="next" title="CIME.baselines package" href="CIME.baselines.html" />
     <link rel="prev" title="CIME.Tools package" href="CIME.Tools.html" /> 
 </head>
 
@@ -66,6 +66,7 @@
 <li class="toctree-l4"><a class="reference internal" href="CIME.SystemTests.html">CIME.SystemTests package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CIME.Tools.html">CIME.Tools package</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">CIME.XML package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CIME.baselines.html">CIME.baselines package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CIME.build_scripts.html">CIME.build_scripts package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CIME.case.html">CIME.case package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CIME.data.html">CIME.data package</a></li>
@@ -771,6 +772,30 @@ resubmit_immediate indicates that all jobs indicated by the RESUBMIT option shou
 <p>workflow is a logical indicating whether only “job” is submitted or the workflow sequence starting with “job” is submitted</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="CIME.XML.env_batch.get_job_deps">
+<span class="sig-prename descclassname"><span class="pre">CIME.XML.env_batch.</span></span><span class="sig-name descname"><span class="pre">get_job_deps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dependency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prev_job</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_prereq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/CIME/XML/env_batch.html#get_job_deps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CIME.XML.env_batch.get_job_deps" title="Link to this definition"></a></dt>
+<dd><p>Gather list of job batch ids that a job depends on.</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>dependency<span class="classifier">str</span></dt><dd><p>List of dependent job names.</p>
+</dd>
+<dt>depid<span class="classifier">dict</span></dt><dd><p>Lookup where keys are job names and values are the batch id.</p>
+</dd>
+<dt>user_prereq<span class="classifier">str</span></dt><dd><p>User requested dependency.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>list</dt><dd><p>List of batch ids that job depends on.</p>
+</dd>
+</dl>
+</section>
 </dd></dl>
 
 </section>
@@ -2051,7 +2076,7 @@ and the second a dict of qualifiers for the job</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="CIME.Tools.html" class="btn btn-neutral float-left" title="CIME.Tools package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="CIME.build_scripts.html" class="btn btn-neutral float-right" title="CIME.build_scripts package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="CIME.baselines.html" class="btn btn-neutral float-right" title="CIME.baselines package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

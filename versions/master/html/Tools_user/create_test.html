@@ -171,9 +171,6 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
-  -d, --debug           Print debug information (very verbose) to file /home/runner/work/cime/cime/scripts/create_test.log
-  -v, --verbose         Add additional context (time and file) to log messages
-  -s, --silent          Print only warnings and error messages
   --no-run              Do not run generated tests
   --no-build            Do not build generated tests, implies --no-run
   --no-setup            Do not setup generated tests, implies --no-build and --no-run
@@ -281,6 +278,11 @@ options:
   -M MAIL_TYPE, --mail-type MAIL_TYPE
                         When to send user email. Options are: never, all, begin, end, fail.
                         You can specify multiple types with either comma-separated args or multiple -M flags.
+
+Logging options:
+  -d, --debug           Print debug information (very verbose) to file /home/runner/work/cime/cime/scripts/create_test.log
+  -v, --verbose         Add additional context (time and file) to log messages
+  -s, --silent          Print only warnings and error messages
 </pre></div>
 </div>
 </section>

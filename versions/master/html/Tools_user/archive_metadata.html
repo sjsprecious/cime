@@ -147,6 +147,8 @@
 <div class="toctree-wrapper compound">
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ./archive_metadata --help
+/home/runner/work/cime/cime/CIME/utils.py:204: SyntaxWarning: invalid escape sequence &#39;\]&#39;
+  chars = &quot;+*?&lt;&gt;/{}[\]~`@:&quot;  # pylint: disable=anomalous-backslash-in-string
 usage: archive_metadata [-h] [-d] [-v] [-s] --user USER --password
                         [--caseroot CASEROOT] [--workdir WORKDIR] --expType
                         {CMIP6,production,tuning,lens,C1,C2,C3,C4,C5}
@@ -162,10 +164,6 @@ https://csesgweb.cgd.ucar.edu/expdb2.0 for details.
 
 options:
   -h, --help            show this help message and exit
-  -d, --debug           Print debug information (very verbose) to file /home/r
-                        unner/work/cime/cime/CIME/Tools/archive_metadata.log
-  -v, --verbose         Add additional context (time and file) to log messages
-  -s, --silent          Print only warnings and error messages
   --user USER           User name for SVN CESM developer access (required)
   --password            Password for SVN CESM developer access (required)
   --caseroot CASEROOT   Fully quailfied path to case root directory
@@ -217,6 +215,12 @@ options:
                         post argument defaults to posting metadata to the
                         production expdb2.0 web application server at URL
                         &quot;http://csegweb.cgd.ucar.edu/expdb2.0&quot; (optional).
+
+Logging options:
+  -d, --debug           Print debug information (very verbose) to file /home/r
+                        unner/work/cime/cime/CIME/Tools/archive_metadata.log
+  -v, --verbose         Add additional context (time and file) to log messages
+  -s, --silent          Print only warnings and error messages
 </pre></div>
 </div>
 </section>

@@ -186,6 +186,13 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
+  -B BAD, --bad BAD     Name of bad commit, default is current HEAD. (default:
+                        HEAD)
+  -a, --all-commits     Test all commits, not just merges (default: False)
+  -S SCRIPT, --script SCRIPT
+                        Use your own custom script instead (default: None)
+
+Logging options:
   -d, --debug           Print debug information (very verbose) to file
                         /home/runner/work/cime/cime/CIME/Tools/cime_bisect.log
                         (default: False)
@@ -193,11 +200,6 @@ options:
                         (default: False)
   -s, --silent          Print only warnings and error messages (default:
                         False)
-  -B BAD, --bad BAD     Name of bad commit, default is current HEAD. (default:
-                        HEAD)
-  -a, --all-commits     Test all commits, not just merges (default: False)
-  -S SCRIPT, --script SCRIPT
-                        Use your own custom script instead (default: None)
 </pre></div>
 </div>
 </section>
