@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -6,19 +8,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CIME.SystemTests package &mdash; CIME master documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=30d551ce"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=30d551ce"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -37,9 +38,6 @@
           <a href="../index.html" class="icon icon-home">
             CIME
           </a>
-              <div class="version">
-                master
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -492,6 +490,53 @@ conduct an ensemble of simulations starting from different initial conditions.</
 This is the subclass’ extension point if they need to define a custom build
 phase.</p>
 <p>PLEASE THROW EXCEPTION ON FAIL</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CIME.SystemTests.mvk.MVK.process_evv_output">
+<span class="sig-name descname"><span class="pre">process_evv_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evv_out_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/CIME/SystemTests/mvk.html#MVK.process_evv_output"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CIME.SystemTests.mvk.MVK.process_evv_output" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CIME.SystemTests.mvk.MVK.update_testlog">
+<span class="sig-name descname"><span class="pre">update_testlog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evv_out_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/CIME/SystemTests/mvk.html#MVK.update_testlog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CIME.SystemTests.mvk.MVK.update_testlog" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="CIME.SystemTests.mvk.MVKConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CIME.SystemTests.mvk.</span></span><span class="sig-name descname"><span class="pre">MVKConfig</span></span><a class="reference internal" href="../_modules/CIME/SystemTests/mvk.html#MVKConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CIME.SystemTests.mvk.MVKConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="CIME.html#CIME.config.ConfigBase" title="CIME.config.ConfigBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConfigBase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CIME.SystemTests.mvk.MVKConfig.evv_test_config">
+<span class="sig-name descname"><span class="pre">evv_test_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/CIME/SystemTests/mvk.html#MVKConfig.evv_test_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CIME.SystemTests.mvk.MVKConfig.evv_test_config" title="Link to this definition"></a></dt>
+<dd><p>Customize the evv4esm configuration.</p>
+<p>This method is used to customize the default evv4esm configuration
+or generate a completely new one.</p>
+<p>The return configuration will be written to <cite>$RUNDIR/$CASE.json</cite>.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>case (CIME.case.case.Case): The case instance.
+config (dict): Default evv4esm configuration.</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict: Dictionary with test configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CIME.SystemTests.mvk.MVKConfig.generate_namelist">
+<span class="sig-name descname"><span class="pre">generate_namelist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/CIME/SystemTests/mvk.html#MVKConfig.generate_namelist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CIME.SystemTests.mvk.MVKConfig.generate_namelist" title="Link to this definition"></a></dt>
+<dd><p>Generate per instance namelist.</p>
+<p>This method is called for each instance to generate the desired
+modifications.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>case (CIME.case.case.Case): The case instance.
+component (str): Component the namelist belongs to.
+i (int): Instance unique number.
+filename (str): Name of the namelist that needs to be created.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1204,6 +1249,27 @@ files.</p>
 If success_change is True, success requires some files to be different</p>
 </dd></dl>
 
+</dd></dl>
+
+</section>
+<section id="module-CIME.SystemTests.test_mods">
+<span id="cime-systemtests-test-mods-module"></span><h2>CIME.SystemTests.test_mods module<a class="headerlink" href="#module-CIME.SystemTests.test_mods" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="CIME.SystemTests.test_mods.find_test_mods">
+<span class="sig-prename descclassname"><span class="pre">CIME.SystemTests.test_mods.</span></span><span class="sig-name descname"><span class="pre">find_test_mods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comp_interface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_mods</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/CIME/SystemTests/test_mods.html#find_test_mods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CIME.SystemTests.test_mods.find_test_mods" title="Link to this definition"></a></dt>
+<dd><p>Finds paths from names of testmods.</p>
+<p>Testmod format is <cite>${component}-${testmod}</cite>. Each testmod is search for
+it it’s component respective <cite>TESTS_MODS_DIR</cite> and <cite>USER_MODS_DIR</cite>.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>comp_interface (str): Name of the component interface.
+test_mods (list): List of testmods names.</p>
+</dd>
+<dt>Returns:</dt><dd><p>List of paths for each testmod.</p>
+</dd>
+<dt>Raises:</dt><dd><p>CIMEError: If a testmod is not in correct format.
+CIMEError: If testmod could not be found.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>

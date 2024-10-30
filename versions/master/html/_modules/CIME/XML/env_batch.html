@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
@@ -5,19 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CIME.XML.env_batch &mdash; CIME master documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=30d551ce"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -34,9 +35,6 @@
           <a href="../../../index.html" class="icon icon-home">
             CIME
           </a>
-              <div class="version">
-                master
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -335,11 +333,34 @@
             <span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;tasks_per_node&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tasks_per_node</span>
             <span class="k">if</span> <span class="n">thread_count</span><span class="p">:</span>
                 <span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;thread_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">thread_count</span>
+                <span class="n">total_tasks</span> <span class="o">=</span> <span class="n">total_tasks</span> <span class="o">*</span> <span class="n">thread_count</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">total_tasks</span> <span class="o">=</span> <span class="n">total_tasks</span> <span class="o">*</span> <span class="n">case</span><span class="o">.</span><span class="n">thread_count</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">total_tasks</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;TOTALPES&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">case</span><span class="o">.</span><span class="n">thread_count</span><span class="p">)</span>
+            <span class="c1"># Total PES accounts for threads as well as mpi tasks</span>
+            <span class="n">total_tasks</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;TOTALPES&quot;</span><span class="p">)</span>
             <span class="n">thread_count</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">thread_count</span>
-        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_tasks</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">thread_count</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">case</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;MAX_TASKS_PER_NODE&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_tasks</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">case</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;MAX_TASKS_PER_NODE&quot;</span><span class="p">):</span>
             <span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;max_tasks_per_node&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">total_tasks</span><span class="p">)</span>
+
+        <span class="c1"># when developed this variable was only needed on derecho, but I have tried to</span>
+        <span class="c1"># make it general enough that it can be used on other systems by defining MEM_PER_TASK and MAX_MEM_PER_NODE in config_machines.xml</span>
+        <span class="c1"># and adding {{ mem_per_node }} in config_batch.xml</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">mem_per_task</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;MEM_PER_TASK&quot;</span><span class="p">)</span>
+            <span class="n">max_mem_per_node</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="s2">&quot;MAX_MEM_PER_NODE&quot;</span><span class="p">)</span>
+            <span class="n">mem_per_node</span> <span class="o">=</span> <span class="n">total_tasks</span>
+
+            <span class="k">if</span> <span class="n">mem_per_node</span> <span class="o">&lt;</span> <span class="n">mem_per_task</span><span class="p">:</span>
+                <span class="n">mem_per_node</span> <span class="o">=</span> <span class="n">mem_per_task</span>
+            <span class="k">elif</span> <span class="n">mem_per_node</span> <span class="o">&gt;</span> <span class="n">max_mem_per_node</span><span class="p">:</span>
+                <span class="n">mem_per_node</span> <span class="o">=</span> <span class="n">max_mem_per_node</span>
+            <span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;mem_per_node&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mem_per_node</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="c1"># ignore this, the variables are not defined for this machine</span>
+            <span class="k">pass</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An exception occured:&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
 
         <span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;ngpus_per_node&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ngpus_per_node</span>
         <span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;mpirun&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">case</span><span class="o">.</span><span class="n">get_mpirun_cmd</span><span class="p">(</span><span class="n">job</span><span class="o">=</span><span class="n">job</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="n">overrides</span><span class="p">)</span>

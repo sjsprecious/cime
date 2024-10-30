@@ -332,6 +332,14 @@ CIME.tests.test\_unit\_system\_tests module
    :undoc-members:
    :show-inheritance:
 
+CIME.tests.test\_unit\_system\_tests\_mvk module
+------------------------------------------------
+
+.. automodule:: CIME.tests.test_unit_system_tests_mvk
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 CIME.tests.test\_unit\_test\_status module
 ------------------------------------------
 
